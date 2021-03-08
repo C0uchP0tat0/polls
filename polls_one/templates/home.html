@@ -1,0 +1,12 @@
+<h1>Последние опросы</h1>
+{% if polls_list %}
+    <ul>
+        {% for poll in polls_list %}
+        	<div>
+        	<li><a href="{% url 'detail' poll.pk  %}">{{ poll.name }}<a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Опросы не найдены.</p>
+{% endif %}
+
